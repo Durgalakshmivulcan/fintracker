@@ -182,7 +182,6 @@ const UserPage = () => {
               ? `<img src="http://localhost:5000${data}" width="60" height="60" />`
               : 'No Image';
           }
-
         },
       ],
       fixedHeader: true,
