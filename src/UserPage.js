@@ -41,11 +41,12 @@ const UserPage = () => {
   const [file, setFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
 
-  const expenseFields = [
-    'powerbill', 'waterbill', 'emis', 'houserent', 'subscriptions',
-    'internetbill', 'study', 'entertainment', 'fooddrink', 'dwakra',
-    'groceries', 'health', 'shopping', 'transport', 'gifts', 'others',
-  ];
+  const expenseFields = useMemo(() => [
+  'powerbill', 'waterbill', 'emis', 'houserent', 'subscriptions',
+  'internetbill', 'study', 'entertainment', 'fooddrink', 'dwakra',
+  'groceries', 'health', 'shopping', 'transport', 'gifts', 'others',
+], []);
+
 
   useEffect(() => {
     fetchEntryOptions();

@@ -34,8 +34,9 @@ const ExpenseGraphDashboard = () => {
   const [entryOptions, setEntryOptions] = useState([]);
   const [chartData, setChartData] = useState(null);
 
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const months = useMemo(() => ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                              'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], []);
+
 
   useEffect(() => {
     fetchEntryOptions();
