@@ -213,7 +213,7 @@ app.get('/api/dashboard-data', (req, res) => {
   });
 });
 
-// DELETE (Soft Delete)
+// DELETE (Soft Delete) update status to '0'
 app.delete('/api/household/:id', (req, res) => {
   const entryId = req.params.id;
   const query = 'UPDATE househole_info SET status = 0 WHERE day_id = ?';
