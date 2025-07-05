@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark rounded shadow mx-1" style={{ backgroundColor: "#0c0e3f" }}>
       <div className="container-fluid">
-        <a className="navbar-brand d-flex align-items-center" href="#">
+        <a className="navbar-brand d-flex align-items-center" href="/dashboard">
           <img src="/images/moneyicon1.jpg" alt="moneyicon1" width="30" height="30" className="d-inline-block align-text-top me-2" />
           Household Expense & Savings Tracker
         </a>

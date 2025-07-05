@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Line } from 'react-chartjs-2';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Navbar';
+import { useCallback } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -41,10 +42,11 @@ const ExpenseGraphDashboard = () => {
   }, []);
 
   useEffect(() => {
-    if (year) {
-      fetchChartData();
-    }
-  }, [year, entryname]);
+  if (year) {
+    fetchChartData();
+  }
+}, [year, entryname, fetchChartData]);
+
 
   const fetchEntryOptions = async () => {
   try {
@@ -61,7 +63,9 @@ const ExpenseGraphDashboard = () => {
 };
 
 
-  const fetchChartData = async () => {
+  
+
+const fetchChartData = useCallback(async () => {
   try {
     const response = await axios.get('http://localhost:5000/api/graph-data', {
       params: { year, entryname }
@@ -101,7 +105,7 @@ const ExpenseGraphDashboard = () => {
   } catch (error) {
     console.error('Error fetching chart data:', error);
   }
-};
+}, [year, entryname, months]);
 
 
   return (

@@ -88,7 +88,7 @@ const UserPage = () => {
     let total = expenseFields.reduce((sum, key) => sum + (parseFloat(formData[key]) || 0), 0);
     setTotalExpenditure(total);
     setGrossSavings((parseFloat(formData.income) || 0) - total);
-  }, [formData]);
+  }, [formData, expenseFields]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
