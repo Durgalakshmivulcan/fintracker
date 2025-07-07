@@ -93,7 +93,7 @@ const ExpenseDashboard = () => {
           data: 'bills_images',
           render: function (data) {
             return data
-              ? `<img src="http://localhost:5000${data}" width="60" height="60" />`
+              ? `<img src="http://fintracker-server-z1wm.onrender.com${data}" width="60" height="60" />`
               : 'No Image';
           }
 
