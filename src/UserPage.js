@@ -55,7 +55,7 @@ const UserPage = () => {
 
   const fetchEntryOptions = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/get_entrynames');
+      const res = await axios.get('https://fintracker-server-z1wm.onrender.com/api/get_entrynames');
       if (Array.isArray(res.data)) setNames(res.data);
     } catch (error) {
       console.error('Error fetching entry options:', error);
@@ -64,7 +64,7 @@ const UserPage = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/dashboard-data');
+      const res = await axios.get('https://fintracker-server-z1wm.onrender.com/api/dashboard-data');
       setData(res.data);
     } catch (err) {
       console.error('Data fetch error:', err);
@@ -106,12 +106,12 @@ const UserPage = () => {
       }
 
       if (editId) {
-        await axios.put(`http://localhost:5000/api/household/update/${editId}`, fullForm, {
+        await axios.put(`https://fintracker-server-z1wm.onrender.com/api/household/update/${editId}`, fullForm, {
           headers: { 'Content-Type': 'multipart/form-data' },
         });
         alert('Expense updated successfully!');
       } else {
-        await axios.post('http://localhost:5000/api/household', fullForm, {
+        await axios.post('https://fintracker-server-z1wm.onrender.com/api/household', fullForm, {
           headers: { 'Content-Type': 'multipart/form-data' },
         });
         alert('Expense saved successfully!');
@@ -234,7 +234,7 @@ const UserPage = () => {
         const confirmDelete = window.confirm('Are you sure you want to delete this entry?');
         if (confirmDelete) {
           try {
-            await axios.delete(`http://localhost:5000/api/household/${rowData.day_id}`);
+            await axios.delete(`https://fintracker-server-z1wm.onrender.com/api/household/${rowData.day_id}`);
             alert('Deleted successfully');
             setData(prev => prev.filter(entry => entry.day_id !== rowData.day_id));
           } catch (err) {

@@ -51,7 +51,7 @@ const ExpenseGraphDashboard = () => {
 
   const fetchEntryOptions = async () => {
   try {
-    const res = await axios.get('http://localhost:5000/api/get_entrynames');
+    const res = await axios.get('https://fintracker-server-z1wm.onrender.com/api/get_entrynames');
 
     if (Array.isArray(res.data)) {
       setEntryOptions(res.data); // Expecting: [{ user_id, name }, ...]
@@ -68,7 +68,7 @@ const ExpenseGraphDashboard = () => {
 
 const fetchChartData = useCallback(async () => {
   try {
-    const response = await axios.get('http://localhost:5000/api/graph-data', {
+    const response = await axios.get('https://fintracker-server-z1wm.onrender.com/api/graph-data', {
       params: { year, entryname }
     });
 

@@ -20,7 +20,7 @@ const ExpenseDashboard = () => {
   }, []);
   // Fetch dashboard data
   useEffect(() => {
-    axios.get('http://localhost:5000/api/dashboard-data')
+    axios.get('https://fintracker-server-z1wm.onrender.com/api/dashboard-data')
       .then(res => setData(res.data))
       .catch(err => console.error('Data fetch error:', err));
 
@@ -30,7 +30,7 @@ const ExpenseDashboard = () => {
 
   const fetchEntryOptions = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/get_entrynames');
+      const res = await axios.get('https://fintracker-server-z1wm.onrender.com/api/get_entrynames');
 
       if (Array.isArray(res.data)) {
         setNames(res.data);
