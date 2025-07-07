@@ -46,7 +46,7 @@ const ExpenseGraphDashboard = () => {
   if (year) {
     fetchChartData();
   }
-}, [year, entryname, fetchChartData]);
+}, [year, entryname]);
 
 
   const fetchEntryOptions = async () => {
